@@ -12,8 +12,9 @@ Fork & Clone this repo.
 
 --------------------------------------------------------
 1. Managing Expectations (Trucking Co) - User Story: I want my customers to pick three deliver dates based on the estimated transit time. I want my customers to be able to see any weather or traffic delays. I want an alert to go out if a deliver date will be missed.
-2. 
-3.
+2. Book Bean (Book Club/ Coffee Club) - As a member, I want to be able to see what books others are reading in the same genre as me so I can choose a book.
+As a member, I want to access book discussion page to add my thoughts on the book and view other people's entries. As a member, I want to rate the coffee sent to me and read what other's thought. As a member, I want to be able to access and update my payment information and shipping preferences.
+3. Actionable Fractional (Time Share/Odd Jobs)
 ---------------------------------------------------------
 
 - [ ] Make a PR when you're done!
