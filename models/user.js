@@ -13,7 +13,9 @@ module.exports = (sequelize, DataTypes) => {
          * The `models/index` file will call this method automatically.
          */
         static associate(models) {
-        // define association here
+      models.user.hasOne(models.userDetail);
+      models.user.hasOne(models.paymentInfo);
+      models.user.hasMany(models.order);
         }
     };
     user.init({
@@ -28,6 +30,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         email: {
             type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
             validate: {
                 isEmail: { // does a boolean check
                     msg: 'Invalid email'
