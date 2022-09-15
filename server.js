@@ -8,7 +8,7 @@ const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
 
 const SECRET_SESSION = process.env.SECRET_SESSION;
-console.log(`yooooooo`, SECRET_SESSION);
+console.log(`Shhhhh:`, SECRET_SESSION);
 
 app.set('view engine', 'ejs');
 
