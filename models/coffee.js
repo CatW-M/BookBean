@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      models.coffee.hasMany(models.order);
-      models.coffee.hasOne(models.coffeeBook);
+      models.coffee.belongsToMany(models.order, {through: "coffeeId"});
+      models.coffee.hasOne(models.coffeebook);
     }
   }
   coffee.init({
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     caffeinated: DataTypes.BOOLEAN,
     imageUrl: DataTypes.STRING
   }, {
-    sequelize,
+    sequelize: sequelize,
     modelName: 'coffee',
   });
   return coffee;

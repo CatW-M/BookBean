@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     exp: DataTypes.STRING,
     frequency: DataTypes.STRING
   }, {
-    sequelize,
+    sequelize: sequelize,
     modelName: 'paymentInfo',
   });
   return paymentInfo;

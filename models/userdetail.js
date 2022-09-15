@@ -25,8 +25,9 @@ module.exports = (sequelize, DataTypes) => {
     birthday: {
       type: DataTypes.DATEONLY,
       allowNull: false,
-    }
-    sequelize,
+    }},
+    {
+    sequelize: sequelize,
     modelName: 'userDetail',
   });
   return userDetail;

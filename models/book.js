@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      models.book.hasOne(models.coffeeBook);
+      models.book.hasOne(models.coffeebook);
     }
   }
   book.init({
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     genre: DataTypes.STRING,
     imageUrl: DataTypes.STRING
   }, {
-    sequelize,
+    sequelize: sequelize,
     modelName: 'book',
   });
   return book;

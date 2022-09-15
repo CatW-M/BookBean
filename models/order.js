@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER,
     rated: DataTypes.INTEGER
   }, {
-    sequelize,
+    sequelize: sequelize,
     modelName: 'order',
   });
   return order;

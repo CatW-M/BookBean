@@ -10,15 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      models.coffeebook.hasMany(models.coffee, {through: "coffeeId"});
-      models.coffeebook.hasMany(models.book, {through: "bookId"});
+      models.coffeebook.belongsToMany(models.coffee, {through: "coffeeId"});
+      models.coffeebook.belongsToMany(models.book, {through: "bookId"});
     }
   }
   coffeebook.init({
     coffeeId: DataTypes.INTEGER,
     bookId: DataTypes.INTEGER
   }, {
-    sequelize,
+    sequelize: sequelize,
     modelName: 'coffeebook',
   });
   return coffeebook;
