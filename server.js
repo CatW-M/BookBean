@@ -39,12 +39,19 @@ app.get('/', (req, res) => {
 
 // Add this above /auth controllers
 app.get('/profile', isLoggedIn, (req, res) => {
-  const { id, name, email } = req.user.get(); 
-  res.render('profile', { id, name, email });
+  const { name, email } = req.user.get(); 
+  const { coffeeId } = req.order.get();
+  const { coffeeName } = req.coffee.get();
+  //need to understand how linking databases works to retrieve the coffeeName and imageUrl from coffees via
+  //latest order for customer
+
+  res.render('profile', { name, email, coffeeName });
 });
 
 //access to all of our auth routes GET /auth/login, GET /auth/signip POST routes
 app.use('/auth', require('./controllers/auth'));
+app.use('/books', require('./controllers/books'));
+app.use('/coffees', require('./controllers/coffees'));
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {

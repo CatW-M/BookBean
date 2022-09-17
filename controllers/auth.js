@@ -30,11 +30,16 @@ router.post('/login', passport.authenticate('local', {
 
 router.post('/signup', async (req, res) => {
   // we now have access to the user info (req.body);
-  const { email, name, password } = req.body; // goes and us access to whatever key/value inside of the object
+  const { email, name, password, address1, address2, city, state, postCode, birthday } = req.body; // goes and us access to whatever key/value inside of the object
   try {
     const [user, created] = await db.user.findOrCreate({
         where: { email },
         defaults: { name, password }
+        // handle extra data and send to userDetail db
+      })
+      const [userDetail] = await db.userDetail.findOrCreate({
+          where: { userId },
+          defaults: { address1, address2, city, state, postCode, birthday }
     });
 
     if (created) {
@@ -44,7 +49,6 @@ router.post('/signup', async (req, res) => {
             successRedirect: '/',
             successFlash: `Welcome ${user.name}. Account was created and logging in...`
         }
-        // 
         passport.authenticate('local', successObject)(req, res);
     } else {
       // Send back email already exists
@@ -55,7 +59,7 @@ router.post('/signup', async (req, res) => {
         // There was an error that came back; therefore, we just have the user try again
         console.log('**************Error');
         console.log(error);
-        req.flash('error', 'Either email or password is incorrect. Please try again.');
+        req.flash('error', 'Either email or password is incorrect. Please login');
         res.redirect('/auth/signup');
   }
 });
