@@ -4,7 +4,7 @@ const passport = require('../config/ppConfig');
 const db = require('../models');
 
 router.get("/", (req, res) => {
-  res.render("auth/signup");
+  res.render("coffees/home");
 });
 
 router.get("/login", (req, res) => {

@@ -1,14 +1,15 @@
 <!--  Carousel of books at top of page  -->
 <!-- add links to redirect to individual book chat -->
-<h1 class="main">Books We Recommend:</h1>
-<div class="slideshow-container fade">
-<% books.forEach(function(book) { %>
-    <div class="containers">
-        <div class="messageinfo">1 of 1</div>
-        <img src="<%=book.imageUrl %>" style="width:100%" alt="<%=book.title %>">
-        <div class="info"><%=book.title%>, By <%=book.author%></div>
-        <% });  %> 
-        </div>
-</div>
+<div><h1 class="main">Books We Recommend:</h1>
+<div class="slideshow-container">
 
+<% books.forEach((book) => { %>
+    <div class="containers">
+        <div class="messageinfo"><%=book.id %> of <%=book.length%> </div>
+        <div class="image"><img src="<%=book.imageUrl%>" alt="<%=book.title %> "></div>
+        <div class="info"><%= book.title %>, By <%= book.author %></div>
+    </div>
+    <% });  %> 
+</div>
+</div>
 
