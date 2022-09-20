@@ -8,6 +8,7 @@
         <div class="messageinfo"><%=book.id %> of <%=book.length%> </div>
         <div class="image"><img src="<%=book.imageUrl%>" alt="<%=book.title %> "></div>
         <div class="info"><%= book.title %>, By <%= book.author %></div>
+        <h3><a href="localhost:3000/books/discuss/<%book.id%>">Join the Conversation</h3>
     </div>
     <% });  %> 
 </div>

@@ -1,0 +1,33 @@
+
+<h1><%book.title%>
+
+</h1><h1><%= book.title %> <br><small>by <%= book.author %></small></h1>
+<div class="image"><img src="<%book.imageUrl%>" alt=""><%=book.title%></div>
+
+<hr />
+
+
+<h2>Discussion</h2>
+<div>
+  <% book.comments.forEach((discuss) => { %>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text"><%= discussion.content %></p>
+        <h5 class="card-author">- <%= discussion.name %></h5>
+      </div>
+    </div>
+  <% }) %>
+</div>
+<hr />
+
+<h4>Comment on this post</h4>
+  <p><form action="/books/discuss" method="POST">
+    <div class="form">
+    Name <br>
+    <input type="string" name="name" > <br>
+    Comment <br><input type="text" name="content">
+    <input type="hidden" name="bookId" value="<%= book.id %>">
+    <br><div class="button"><input type="submit"></div>
+  </div>
+  </form></p>
+<hr />
