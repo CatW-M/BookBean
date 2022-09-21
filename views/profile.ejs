@@ -2,5 +2,13 @@
 <p>Email: <%= email %></p>
 <p>Id: <%= id %></p>
 
-<h2>Current Coffee Selection</h2>
-<p><%=  %> </p>
+<label for="coffee-select">Choose a coffee and we'll recommend a book:</label>
+<form method="GET" action="/coffees">
+<select name="coffees" id="coffee-select">
+    <option value="">--Please choose an option--</option>
+    <% coffees.forEach((coffee) => { %>
+    <option value="<%=coffee.coffeeName%>"><%=coffee.coffeeName%></option>
+    <% }); %>
+</select>
+<button class="btn btn-primary" type="submit">See which book pairs well with this coffee</button>
+</form>

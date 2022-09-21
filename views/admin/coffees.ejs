@@ -1,0 +1,44 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/public/css/product.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main>
+                <% if (coffs.length > 0) { %>
+                    <div class="grid">
+                        <% for (let coffee of coffs) { %>
+                            <article class="card coffee-item">
+                                <header class="card__header">
+                                    <h1 class="coffee__title">
+                                        <%= coffee.coffeeName %>
+                                    </h1>
+                                </header>
+                                <div class="card__image">
+                                    <img src="<%= coffee.imageUrl %>" alt="<%= coffee.coffeeName %>">
+                                </div>
+                                <div class="card__content">
+                                    <h2 class="coffee__price">$
+                                        <%= coffee.price %>
+                                    </h2>
+                                    <p class="coffee__description">
+                                        <%= coffee.description %>
+                                    </p>
+                                </div>
+                                <div class="card__actions">
+                                    <a href="/admin/edit-coffee/<%=coffee.id%>" class="btn">Edit</a>
+                                    <form action="/admin/delete-coffee" method="POST">
+                                        <input type="hidden" value="<%=coffee.id%>" name="coffeeId">
+                                        <button class="btn" type="submit">Delete</button>
+                                    </form>
+
+                                </div>
+                            </article>
+                            <% } %>
+                    </div>
+                    <% } else { %>
+                        <h1>No Such Coffees Found!</h1>
+                        <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>

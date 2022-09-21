@@ -49,6 +49,7 @@ app.get('/profile', isLoggedIn, (req, res) => {
 });
 
 //access to all of our auth routes GET /auth/login, GET /auth/signip POST routes
+app.use('/admin', require('./controllers/admin'));
 app.use('/auth', require('./controllers/auth'));
 app.use('/books', require('./controllers/books'));
 app.use('/coffees', require('./controllers/coffees'));

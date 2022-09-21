@@ -1,0 +1,32 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/public/css/forms.css">
+<link rel="stylesheet" href="/public/css/product.css">
+</head>
+
+<body>
+<%- include('../includes/navigation.ejs') %>
+
+<main>
+    <form class="coffee-form" action="/admin/<%= editing? 'edit-coffee?edit=true' : 'add-coffee'%>" method="POST">
+        <div class="form-control">
+            <label for="coffeeName">Coffee Name</label>
+            <input type="text" name="coffeeName" id="coffeeName" value="<%= editing ? coffee.coffeeName : ''%>">
+        </div>
+        <div class="form-control">
+            <label for="imageUrl">Image URL</label>
+            <input type="text" name="imageUrl" id="imageUrl" value="<%= editing ? coffee.imageUrl : '' %>">
+        </div>
+        <div class="form-control">
+            <label for="price">Price</label>
+            <input type="number" name="price" id="price" step="0.01" value="<%= editing ? coffee.price : '' %>">
+        </div>
+        <div class="form-control">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" rows="5"><%= editing ? coffee.description : '' %></textarea>
+        </div>
+
+        <button class="btn" type="submit"><%= editing ? 'Update Coffee' : 'Add Coffee' %></button>
+        <% if (editing) {%><input type="hidden" name = "coffeeId" value="<%=coffee.id%>"> <% } %>
+    </form>
+</main>
+<%- include('../includes/end.ejs') %>

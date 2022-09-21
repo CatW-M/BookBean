@@ -7,7 +7,7 @@ module.exports = {
         coffeeName: 'Chance Encounter',
         type: 'Medium',
         caffeinated: true,
-        imageUrl: "coffee.png",
+        imageUrl: "coffee.jpg",
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
       },
@@ -15,7 +15,7 @@ module.exports = {
         coffeeName: 'English Cozy',
         type: 'Medium Dark',
         caffeinated: true,
-        imageUrl: "coffee1.png",
+        imageUrl: "coffee1.jpg",
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
       },
@@ -23,7 +23,7 @@ module.exports = {
         coffeeName: 'Atomic Blonde',
         type: 'Blonde',
         caffeinated: true,
-        imageUrl: "coffee2.png",
+        imageUrl: "coffee2.jpg",
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
       },
@@ -31,7 +31,7 @@ module.exports = {
         coffeeName: 'Big Easy',
         type: 'Medium',
         caffeinated: true,
-        imageUrl: "coffee3.png",
+        imageUrl: "coffee3.jpg",
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
       },
@@ -39,7 +39,7 @@ module.exports = {
         coffeeName: 'Smooth Operator',
         type: 'Medium',
         caffeinated: true,
-        imageUrl: "coffee4.png",
+        imageUrl: "coffee4.jpg",
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
       },
@@ -47,7 +47,7 @@ module.exports = {
         coffeeName: 'Moonshiner',
         type: 'Medium',
         caffeinated: true,
-        imageUrl: "coffee5.png",
+        imageUrl: "coffee5.jpg",
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
       }
