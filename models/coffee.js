@@ -10,14 +10,24 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      models.coffee.belongsTo(models.user, {
+        constraints: true,
+        onDelete: 'CASCADE'
+      });
+      models.coffee.belongsToMany(models.cart, {
+        through: 'CartItem'
+      });
+      models.coffee.belongsToMany(models.order, {
+        through: 'OrderItem'
+      });
     }
   }
   Coffee.init({
     name: DataTypes.STRING,
     price: DataTypes.DOUBLE,
     imageUrl: DataTypes.STRING,
-    description: DataTypes.STRING
+    description: DataTypes.STRING,
+    genre: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Coffee',
