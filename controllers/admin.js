@@ -39,12 +39,12 @@ router.get('/edit-coffee/:coffeeId', (req, res) => {
 });
 
 router.post('/add-coffee', (req, res) => {
-    const coffeeName = req.body.coffeeName;
+    const name = req.body.name;
     const imageUrl = req.body.imageUrl;
     const price = req.body.price;
     const description = req.body.description;
     req.user.createCoffee({
-        coffeeName: coffeeName,
+        name: name,
         imageUrl: imageUrl,
         price: price,
         description: description
@@ -57,14 +57,14 @@ router.post('/add-coffee', (req, res) => {
 
 router.post('edit-coffee', (req, res) => {
     const id = req.body.coffeeId;
-    const coffeeName = req.body.coffeeName;
+    const name = req.body.name;
     const imageUrl = req.body.imageUrl;
     const price = req.body.price;
     const description = req.body.description;
 
     Coffee.findByPk(id)
         .then(coffee => {
-            coffee.coffeeName = coffeeName;
+            coffee.name = name;
             coffee.imageUrl = imageUrl;
             coffee.price = price;
             coffee.description = description;
@@ -88,7 +88,7 @@ router.get('/coffees', (req, res) => {
 });
 router.post('/delete-coffee', (req, res) => {
     const coffeeId = req.body.coffeeId;
-    Coffee.destroy({
+    coffee.destroy({
         where: {
             id: coffeeId
         }

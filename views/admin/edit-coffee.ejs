@@ -9,8 +9,8 @@
 <main>
     <form class="coffee-form" action="/admin/<%= editing? 'edit-coffee?edit=true' : 'add-coffee'%>" method="POST">
         <div class="form-control">
-            <label for="coffeeName">Coffee Name</label>
-            <input type="text" name="coffeeName" id="coffeeName" value="<%= editing ? coffee.coffeeName : ''%>">
+            <label for="name">Coffee Name</label>
+            <input type="text" name="name" id="name" value="<%= editing ? coffee.name : ''%>">
         </div>
         <div class="form-control">
             <label for="imageUrl">Image URL</label>

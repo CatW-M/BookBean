@@ -6,27 +6,27 @@
 <%- include('../includes/navigation.ejs') %>
 
 <main>
-    <% if (prods.length > 0) { %>
+    <% if (coffs.length > 0) { %>
         <div class="grid">
-            <% for (let product of prods) { %>
+            <% for (let coffee of coffs) { %>
                 <article class="card coffee-item">
                     <header class="card__header">
                         <h1 class="coffee__title">
-                            <%= product.title %>
+                            <%= coffee.name %>
                         </h1>
                     </header>
                     <div class="card__image">
-                        <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+                        <img src="<%= coffee.imageUrl %>" alt="<%= coffee.name %>">
                     </div>
                     <div class="card__content">
-                        <h2 class="coffee__price">$<%= product.price %></h2>
+                        <h2 class="coffee__price">$<%= coffee.price %></h2>
                         <p class="coffee__description">
-                            <%= product.description %>
+                            <%= coffee.description %>
                         </p>
                     </div>
                     <div class="card__actions">
-                        <a href="/products/<%= product.id %>" class="btn">Details</a>
-                        <%- include('../includes/add-to-cart.ejs', {product:product}) %>
+                        <a href="/products/<%= coffee.id %>" class="btn">Details</a>
+                        <%- include('../includes/add-to-cart.ejs', {coffee:coffee}) %>
                     </div>
                 </article>
             <% } %>

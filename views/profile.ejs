@@ -7,7 +7,7 @@
 <select name="coffees" id="coffee-select">
     <option value="">--Please choose an option--</option>
     <% coffees.forEach((coffee) => { %>
-    <option value="<%=coffee.coffeeName%>"><%=coffee.coffeeName%></option>
+    <option value="<%=coffee.name%>"><%=coffee.name%></option>
     <% }); %>
 </select>
 <button class="btn btn-primary" type="submit">See which book pairs well with this coffee</button>
