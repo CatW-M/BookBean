@@ -1,6 +1,15 @@
 require('dotenv').config();
 const express = require('express');
+const parser = require('body-parser');
 const layouts = require('express-ejs-layouts');
+const adminRoutes = require('./controllers/admin');
+const coffeeRoutes = require('./controllers/coffees');
+const Coffee = require('./models/coffee');
+const User = require('./models/user');
+const Cart = require('./models/cart');
+const CartItem = require('./models/cartitem');
+const Order = require('./models/order');
+const OrderItem = require('./models/orderitem');
 const app = express();
 const session = require('express-session');
 const flash = require('connect-flash');
