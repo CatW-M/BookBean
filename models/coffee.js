@@ -10,14 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      models.coffee.belongsTo(models.user, {
+      models.Coffee.belongsTo(models.user, {
         constraints: true,
         onDelete: 'CASCADE'
       });
-      models.coffee.belongsToMany(models.cart, {
+      models.Coffee.belongsToMany(models.Cart, {
         through: 'CartItem'
       });
-      models.coffee.belongsToMany(models.order, {
+      models.Coffee.belongsToMany(models.Order, {
         through: 'OrderItem'
       });
     }

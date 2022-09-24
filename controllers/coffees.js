@@ -5,7 +5,7 @@ const db = require('../models');
 
 //show route for menu of coffees to purchase 
 router.get("/", async (req, res) => {
-  Coffee.findAll()
+  db.coffee.findAll()
     .then(coffees => {
       res.render('/coffees/shop', {
         coffs: coffees,
@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
   //route to show details for coffees
   router.get('/details', (req, res) => {
     const coffId = req.params.coffeeId;
-    coffee.findByPk(coffId)
+    db.coffee.findByPk(coffId)
     .then((coffee) => {
       res.render('coffees/detail', {
         coffee: coffee,
